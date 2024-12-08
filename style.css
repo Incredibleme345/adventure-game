@@ -1,0 +1,216 @@
+body {
+    color: white;
+    background-color: navy;
+    font-family: 'Courier New';
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+}
+p {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.2;
+    margin-left: 10px;
+}
+.image img {
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+}
+.option-button {
+    font-weight: 400;
+    background-color: blue;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    border: none;
+    z-index: 3;
+    height: 40px;
+    width: 135px;
+    text-align: center;
+    top: 92%;
+    left: 57.2%
+}
+button {
+    background-color: rgb(255, 63, 63);
+    font-size: 16px;
+    padding: 10px 20px;
+    border-width: 2px;
+    position: relative;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    height: 170px;
+    width: 270px;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.2;
+    margin-left: 10px;
+    
+}
+.left {
+
+}
+.right {
+
+    /*
+    top: 100%;
+    right: 13%;
+    transform: translate(50%, -50%);
+    */
+}
+.scenes {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 7px 7px;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+.pop-up-box {
+    border: none solid white;
+    width: 600px;
+    height: 300px;
+    z-index: 3;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(124, 124, 124, 0.1);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    left: 50%;
+    margin-top: 100px;
+    transform: translate(-50%, 0%);
+    visibility: hidden;
+
+
+}
+.slide-image {
+    width: 500px;
+    height: 700px;
+    background-color: orange;
+    border: 5px solid black;
+    position: auto;
+    z-index: 1;
+
+}
+.image {
+    width: 480px;
+    height: 390px;
+    margin: 5px 5px;
+    border: 5px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+.start-maassege {
+    border: none solid white;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    z-index: 2;
+    /*filter: blur(1px);*/
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+.restart-button {
+    font-weight: 400;
+    background-color: blue;
+    position: absolute;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    border: none;
+    z-index: 10;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    display: inline;
+    margin-top: 110px;
+
+}
+.reset-para {
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+
+
+}
+
+.win-message {
+    font-size: 2rem;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s forwards, glowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for fade-in and scale effect */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Keyframes for glowing effect */
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 5px white, 0 0 10px cyan, 0 0 15px cyan;
+    }
+    100% {
+        text-shadow: 0 0 10px white, 0 0 20px blue, 0 0 25px blue;
+    }
+}
+
+.button-win {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: buttonFade 2s forwards;
+}
+
+/* Button fade-in */
+@keyframes buttonFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
