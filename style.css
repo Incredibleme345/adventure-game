@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    flex-direction: column;
+
 }
 h1 {
     text-align: center;
@@ -18,7 +18,7 @@ p {
     color: rgb(255, 255, 255);
     overflow-wrap: break-word;
     white-space: normal;
-    line-height: 1.2;
+    line-height: 1.5;
     margin-left: 10px;
 }
 .image img {
@@ -29,7 +29,7 @@ p {
 .option-button {
     font-weight: 400;
     background-color: blue;
-    position: absolute;
+    position: auto;
     text-align: center;
     align-items: center;
     color: white;
@@ -38,10 +38,13 @@ p {
     border: none;
     z-index: 3;
     height: 40px;
-    width: 135px;
+    width: 110px;
     text-align: center;
     top: 92%;
-    left: 57.2%
+    left: 37%;
+    visibility: visible;
+    border: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 button {
     background-color: rgb(255, 63, 63);
@@ -62,19 +65,14 @@ button {
     white-space: normal;
     line-height: 1.2;
     margin-left: 10px;
+    border: none;
     
 }
-.left {
-
+button:hover, .option-button:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
 }
-.right {
 
-    /*
-    top: 100%;
-    right: 13%;
-    transform: translate(50%, -50%);
-    */
-}
 .scenes {
     display: inline-block;
     position: absolute;
@@ -106,6 +104,7 @@ button {
 
 
 }
+/*
 .slide-image {
     width: 500px;
     height: 700px;
@@ -116,12 +115,34 @@ button {
 
 }
 .image {
-    width: 480px;
+    width: 100%;
+    object-fit: cover;
     height: 390px;
     margin: 5px 5px;
     border: 5px solid black;
     overflow: hidden;
     position: relative;
+}
+*/
+.image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-color: orange;
+    border: 5px solid black;
+    margin: 10px 0;
+    z-index: 1;
+    padding-bottom: 20px;
+    max-height: 1000px;
+
 }
 
 .start-maassege {
@@ -150,7 +171,7 @@ button {
     border: none;
     z-index: 10;
     height: 40px;
-    width: 100px;
+    width: 135px;
     text-align: center;
     display: inline;
     margin-top: 110px;
@@ -164,53 +185,38 @@ button {
 
 }
 
-.win-message {
-    font-size: 2rem;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeInScale 2s forwards, glowEffect 1.5s infinite alternate;
-}
 
-/* Keyframes for fade-in and scale effect */
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
+@media (min-width: 300px) {
+    .main-div {
+        flex-direction: row;
     }
 }
 
-/* Keyframes for glowing effect */
-@keyframes glowEffect {
-    0% {
-        text-shadow: 0 0 5px white, 0 0 10px cyan, 0 0 15px cyan;
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
     }
-    100% {
-        text-shadow: 0 0 10px white, 0 0 20px blue, 0 0 25px blue;
+    h1 {
+        font-size: 28px;
+    }
+    
+    .pop-up-box {
+        width: 80%;
+        
+    }
+        
+    }
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .image {
+        width: 100%;
     }
 }
 
-.button-win {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: royalblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    animation: buttonFade 2s forwards;
-}
-
-/* Button fade-in */
-@keyframes buttonFade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
